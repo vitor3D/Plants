@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&family=Ubuntu:wght@300&display=swap');  /*Importa fonte do google*/
+
+*{  /*Meche na pagina toda*/
+ margin: 0px;
+ 
+}
+body{ 
+  scroll-behavior: smooth; /* Faz a rolagem da pagina ser suave */
+  font-family:'Poppins', sans-serif; /* usa a fonte importada do google */
+  font-size: 19px; /*tamanho da fonte*/
+  background-image: url(5532919.jpg); /* Coloca o background de estrela */
+  color: white; /*Muda a cor do texto de toda a pagina */ 
+}
+nav{ /*Essa é a navbar */
+  font-family:'Poppins', sans-serif; /* usa a fonte importada do google */
+}
+details{ /* Essa é a coisa q faz a magia acontecer */
+ 
+  background-color: rgba(140, 0, 255, 0.100); /*isso muda a cor da navbar */
+  backdrop-filter: blur(15px);          /*Isso aqui faz o fundo do card ter um efeito transparente */
+  -webkit-backdrop-filter: blur(15px); /*Isso aqui faz o fundo do card ter um efeito transparente */
+
+  display: flex; /*Faz ficar "Responsivo"*/
+}
+summary{
+  cursor: pointer;
+}
+p{ 
+  margin: 5px; /* Faz dar margem sómente no texto */
+}
+
+a{ 
+  color: white;
+  text-decoration: none;/* Tira aquela pre-decoração que o "a" aplica*/
+}
+
+.principal{ /*Div do texto sobre nós*/
+  width: 70vw; 
+  height: 80vh;
+  margin-left: auto;
+  margin-right: auto; 
+
+  border-radius: 5px;
+
+  background-color: lavender;
+  opacity: 0.9;
+  
+}
+
+h2{
+  color: black;
+}
+
+#somos{ /*Textinho falando sobre nós*/
+  text-align: justify;
+  color: black;
+  font-weight: bold;
+
+  padding: 10px;
+}
+
+#modalbotao{ /*Botão que chama o modal*/
+  height: 60px; 
+  width: 80px;
+  margin-left: auto;
+  margin-right: auto; 
+  text-align: center;
+
+  background-color: cadetblue;
+  color: black;
+  font-weight: bold;
+
+  border-radius: 20px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.FlexContainer { /* Isso tudo faz um container Flex, Responsivo, o que seria os "Cards" */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  width: 100%;
+  padding: 20px;
+
+  height: 100%;
+  overflow: auto;
+  flex-direction: row;
+}
+
+.FlexContainer div { /*Esse aqui arruma o tamanho deles bonitinho*/
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer ;
+
+  border-left:solid 1px white ;
+  border-bottom:solid 1px white  ;
+  background-color: rgba(255, 255, 255, 0.100);
+  backdrop-filter: blur(15px);          /*Isso aqui faz o fundo do card ter um efeito transparente */
+  -webkit-backdrop-filter: blur(15px); /*Isso aqui faz o fundo do card ter um efeito transparente */
+}
+#Mercurio img{  /*Aqui eu arrumo o tamanho dos planetas, e coloco uma luz neles*/
+  width: 100%;  
+  filter: drop-shadow(0 0 2rem rgb(106, 181, 243))
+  
+}
+#Venus img{ /*Aqui eu arrumo o tamanho dos planetas, e coloco uma luz neles*/
+  width: 150%;  
+  filter: drop-shadow(0 0 2rem rgb(144, 144, 144));
+
+  margin-left: -80px;
+}
+#Terra img{ /*Aqui eu arrumo o tamanho dos planetas, e coloco uma luz neles*/
+  width: 160%;
+  filter: drop-shadow(0 0 2rem rgb(29, 112, 255));
+  
+  margin-left: -90px;
+}
+#Marte img{ /*Aqui eu arrumo o tamanho dos planetas, e coloco uma luz neles*/
+  width: 090%;
+  filter: drop-shadow(0 0 2rem rgb(143, 0, 0));
+
+  margin-left: 10px;
+}
+#Jupter img{  /*Aqui eu arrumo o tamanho dos planetas, e coloco uma luz neles*/
+  width: 90%;
+  filter: drop-shadow(0 0 2rem rgb(222, 243, 106));
+
+  margin-left: 10px;
+}
+#Saturno img{ /*Aqui eu arrumo o tamanho dos planetas, e coloco uma luz neles*/
+  width: 119%;
+  filter: drop-shadow(0 0 2rem rgb(246, 230, 82));
+  margin-left: -25px;
+}
+#Urano img{ /*Aqui eu arrumo o tamanho dos planetas, e coloco uma luz neles*/
+  width: 130%;
+  filter: drop-shadow(0 0 2rem rgb(82, 148, 246));
+  margin-left: -90px;
+}
+#Netuno img{  /*Aqui eu arrumo o tamanho dos planetas, e coloco uma luz neles*/
+  width: 90%;
+  filter: drop-shadow(0 0 2rem rgb(0, 102, 255));
+  
+  margin-left: 10px;
+}
+
+/*DAQUI PRA BAIXO É CONFIGURAÇÃO DO MODAL*/
+#bg{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0, .8); 
+    position: fixed;
+    display: none;
+}
+
+#bg:target{
+    display: block;
+}
+
+#bg:target ~ .box{
+    top: 200px;
+    transition: all .3s;
+    transition-delay: .2s;
+}
+
+.box{
+    background-color: cornsilk;
+    width: 450px;
+    height: 300px;
+    position: absolute;
+    margin-left: -360px;
+    left: 60%;
+    top: -480px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+#close{
+    color: #fff;
+    font-family: Arial;
+    text-decoration: none;
+    font-size: 35px;
+    position: absolute;
+    background-color: #000;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    right: 0;
+    transition: background .2s;
+}
+
+#close:hover{
+    background-color: red;
+}
+/*DAQUI PRA CIMA É CONFIGURAÇÃO DO MODAL*/
+.Html{
+  margin: 50px;
+
+  border-radius: 5px;
+  border-left:solid 1px white ;
+  border-bottom:solid 1px white  ;
+  background-color: rgba(255, 255, 255, 0.100);
+  backdrop-filter: blur(15px);          /*Isso aqui faz o fundo do card ter um efeito transparente */
+  -webkit-backdrop-filter: blur(15px); /*Isso aqui faz o fundo do card ter um efeito transparente */
+}
+#mercBack{
+  background-image: url(.//Planet-Background/Mercurio-background.jpg);
+  background-position: 20% 40%;
+  background-repeat: no-repeat;
+}
+#venusBack{
+  background-image: url(.//Planet-Background/Venus-Background.jpg);
+}
+#terraBack{
+  background-image: url(.//Planet-Background/terra-background.jpg);
+}
+#marteBack{
+  background-image: url(.//Planet-Background/Marte-Background.jpg);
+  background-size: cover;
+}
+#jupterBack{
+  background-image: url(.//Planet-Background/Jupter-Background.jpg.opdownload);
+}
+#saturnoBack{
+  background-image: url(.//Planet-Background/Satunro-background.jpg);
+  background-position: 20% 40%;
+  background-repeat: no-repeat;
+}
+#uranoBack{
+  background-image: url(.//Planet-Background/Urano-Background.jpg);
+}
+#netunoBack{
+  background-image: url(.//Planet-Background/Netuno-Background.jpg);
+}
+#slider {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto 0 auto;
+  border-radius: 4px;
+}
+#slider ul {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 200px;
+  list-style: none;
+}
+#slider ul li {
+  position: relative;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  width: 1000px;
+  height: 500px;
+  background: #ccc;
+  text-align: center;
+  line-height: 300px;
+}
+a.control_prev, a.control_next {
+  position: absolute;
+  top: 40%;
+  z-index: 999;
+  display: block;
+  padding: 4% 3%;
+  width: auto;
+  height: auto;
+  background: #2a2a2a;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+a.control_prev:hover, a.control_next:hover {
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+}
+a.control_prev {
+  border-radius: 0 2px 2px 0;
+}
+a.control_next {
+  right: 0;
+  border-radius: 2px 0 0 2px;
+}
+.slider_option {
+  position: relative;
+  margin: 10px auto;
+  width: 160px;
+  font-size: 18px;
+}

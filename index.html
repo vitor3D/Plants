@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="https://si.nccdn.net/bi_color/light_gray_dark_gray/256x256/icon66.png">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+  <title>Planets</title>
+</head>
+<body>
+  <nav>     
+    <details>
+      <summary><h> Planetas</h> </summary> <!--Isso aqui faz magica, eu não sei como o pessoal não usa isso, bom talvez eu saiba-->
+        <div class="planetas">
+          <a href="Mercurio.html"><P>Mercurio</P></a> <!--Planetas-->
+          <a href="Terra.html"><p>Terra</p></a>    <!--Planetas-->
+          <a href="Marte.html"><p>Marte</p></a>    <!--Planetas-->
+          <a href="Jupter.html"><p>Júpter</p></a>   <!--Planetas-->
+          <a href="Saturno.html"><p>Saturno</p></a>  <!--Planetas-->
+          <a href="Urano.html"><p>Urano</p></a>    <!--Planetas-->
+          <a href="Netuno.html"><p>Netuno</p></a>   <!--Planetas-->
+          <a href="Venus.html"><p>Venus</p></a>   <!--Planetas-->
+          <a href="quemsomosnos.html" id="nos"><p>Quem somos nós</p></a>   <!--Parte obrigatória no trabalho-->
+       </div>
+    </details>
+  </nav>
+
+  <div:main>    <!--Aqui começa os cards dos planetas-->
+   <section class='FlexContainer'>
+      <div id="Mercurio">
+        <a href="Mercurio.html">
+        <b>Mercurio</b> <br>
+        <img alt="Mercurio" src=".//Mercurio-removebg-preview.png">  
+       </a>
+    </div>
+
+      <div id="Venus">
+        <a href="Venus.html">
+        <b>Venus</b>
+        <img alt="Venus" src=".//Venus-removebg-preview.png">
+        </a>
+      </div>
+
+      <div id="Terra">
+        <a href="Terra.html">
+        <b>Terra</b>
+        <img alt="Terra" src=".//image-removebg-preview.png">
+        </a>
+      </div>
+
+      <div id="Marte">
+        <a href="Marte.html">
+        <b> Marte</b>
+        <img alt="Marte" src=".//Marte-removebg-preview.png">
+        </a>
+      </div>
+
+      <div id="Jupter">
+        <a href="Jupter.html">
+        <b>Júpter</b>
+        <img alt="Marte" src=".//Jupiter_and_its_shrunken_Great_Red_Spot-removebg-preview.png">
+        </a>
+      </div>
+
+      <div id="Saturno">
+        <a href="Saturno.html">
+        <b>Saturno</b>
+        <img src=".//saturno-removebg-preview.png" alt="Saturno">
+        </a>
+      </div>
+
+      <div id="Urano">
+        <a href="Urano.html">
+        <b> Urano</b>
+        <img alt="Urano" src=".//planeta-urano-planeta-terra-removebg-preview.png">
+        </a> 
+      </div>
+
+      <div id="Netuno">
+        <a href="Netuno.html">
+        <b> Netuno</b>
+        <img alt="Netuno" src=".//netuno-removebg-preview.png">
+        </a>
+      </div>
+    </section>
+  </div:main>
+  
+  <div id="slider">
+    <a href="#" class="control_next">></a>
+    <a href="#" class="control_prev"><</a>
+    <ul>
+        <li>
+            <a href="#" target="_blank">
+                <img src=".//Planet-Background/SistemaSolar-Slider.jpg"/>
+            </a>
+        </li>
+        <li>
+            <a href="#" target="_blank">
+                <img src=".//Planet-Background/SistemaSolar-Slider2.jpg"/>
+            </a>
+        </li>
+        <li>
+            <a href="#" target="_blank">
+                <img src=".//Planet-Background/SistemaSolar-Slider3.jpg"/>
+            </a>
+        </li>
+        <li>
+            <a href="#" target="_blank">
+                <img src="Planet-Background/SistemaSolar-Slider4.jpg"/>
+            </a>
+        </li>
+    </ul>
+</div>
+<script>
+    $(function() {
+    $('#checkbox').change(function () {
+        setInterval(function () {
+            moveRight();
+        }, 3000);
+    });
+    var slideCount = $('#slider ul li').length;
+    var slideWidth = $('#slider ul li').width();
+    var slideHeight = $('#slider ul li').height();
+    var sliderUlWidth = slideCount * slideWidth;
+    $('#slider').css({
+        width: slideWidth,
+        height: slideHeight
+    });
+    $('#slider ul').css({
+        width: sliderUlWidth,
+        marginLeft: -slideWidth
+    });
+    $('#slider ul li:last-child').prependTo('#slider ul');
+    function moveLeft() {
+        $('#slider ul').animate({
+            left: +slideWidth
+        }, 200, function () {
+            $('#slider ul li:last-child').prependTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+    function moveRight() {
+        $('#slider ul').animate({
+            left: -slideWidth
+        }, 200, function () {
+            $('#slider ul li:first-child').appendTo('#slider ul');
+            $('#slider ul').css('left', '');
+        });
+    };
+    $('a.control_prev').click(function () {
+        moveLeft();
+    });
+    $('a.control_next').click(function () {
+        moveRight();
+    });
+});
+</script>
+<br><br>
+</body>
+</html>
